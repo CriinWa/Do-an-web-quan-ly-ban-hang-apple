@@ -1,0 +1,113 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* CSS */
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .product {
+      border: 1px solid #ddd;
+      padding: 10px;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Quản lý Bán hàng</h1>
+
+  <div class="product-list">
+    <div class="product">
+      <h3>Sản phẩm 1</h3>
+      <p>Giá: $10</p>
+    </div>
+    <div class="product">
+      <h3>Sản phẩm 2</h3>
+      <p>Giá: $15</p>
+    </div>
+  </div>
+
+  <br>
+
+  <div>
+    <h2>Thêm sản phẩm mới</h2>
+    <form>
+      <label for="productName">Tên sản phẩm:</label><br>
+      <input type="text" id="productName" name="productName"><br><br>
+      <label for="productPrice">Giá:</label><br>
+      <input type="text" id="productPrice" name="productPrice"><br><br>
+      <input type="submit" value="Thêm">
+    </form>
+  </div>
+
+  <script>
+    // JavaScript
+    document.querySelector('form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var productName = document.getElementById('productName').value;
+      var productPrice = document.getElementById('productPrice').value;
+
+      var productDiv = document.createElement('div');
+      productDiv.classList.add('product');
+
+      var productNameHeader = document.createElement('h3');
+      productNameHeader.textContent = productName;
+
+      var productPricePara = document.createElement('p');
+      productPricePara.textContent = 'Giá: $' + productPrice;
+
+      productDiv.appendChild(productNameHeader);
+      productDiv.appendChild(productPricePara);
+
+      document.querySelector('.product-list').appendChild(productDiv);
+    });
+  </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* CSS */
+    #image-container {
+      width: 300px;
+      height: 200px;
+      position: relative;
+      overflow: hidden;
+    }
+    .image {
+      position: absolute;
+      transition: opacity 1s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <div id="image-container">
+    <img class="image" src="https://via.placeholder.com/300x200?text=Image1" alt="Image 1" />
+    <img class="image" src="https://via.placeholder.com/300x200?text=Image2" alt="Image 2" />
+  </div>
+
+  <script>
+    // JavaScript
+    const images = document.querySelectorAll('.image');
+    let currentIndex = 0;
+
+    function showNextImage() {
+      images[currentIndex].style.opacity = 0;
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].style.opacity = 1;
+    }
+
+    setInterval(showNextImage, 2000); // Chuyển đổi hình ảnh sau mỗi 2 giây
+  </script>
+</body>
+</html>

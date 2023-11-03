@@ -3,7 +3,6 @@
     margin: 0;
 }
 #header_line {
-    margin-top: 10px;
     width: 100%;
     height: 2.375rem;
     background: #0083D6;
@@ -36,6 +35,7 @@
     height: 2.1875rem;
     border-radius: 8px;
     border: 1px solid #000;
+    box-shadow: 3px 3px 3px #888888;
     display: flex;
     /* width: 45%; */
 }
@@ -49,10 +49,19 @@
 #div_search img {
     cursor: pointer;
     position: absolute;
-    top: 0.4375rem;
-    right: 0.5rem;
+    padding: 5px;
+    top: 0rem;
+    right: 0rem;
     max-width: 1.3125rem;
     max-height: 1.3125rem;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+}
+#div_search img:hover {
+    border: 2px solid transparent;
+    border-radius: 8px;
+    border-right: none;
+    border-bottom: none;
 }
 #div_shopping {
     cursor: pointer;
@@ -67,11 +76,13 @@
 }
 #div_shopping p {
     color: #000;
-    font-family: Roboto;
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 500;
     line-height: 125.023%; /* 1.09394rem */
+}
+#div_shopping p:hover {
+    color: #FFB200;
 }
 #div_login {
     cursor: pointer;
@@ -86,11 +97,13 @@
 }
 #div_login p {
     color: #000;
-    font-family: Roboto;
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 400;
     line-height: 125.023%; /* 1.09394rem */
+}
+#div_login p:hover {
+    color: #FFB200;
 }
 #header_menu {
     display: flex;
@@ -114,9 +127,14 @@
     background: #FFB200;
 }
 #iphone {
+    padding: 3px 2px 3px 0px;
     cursor: pointer;
     display: flex;
     align-items: center;
+}
+#iphone:hover {
+    background-color: #bf9430;
+    border-radius: 8px;
 }
 #iphone img {
     width: 40.264px;
@@ -132,9 +150,14 @@
     line-height: normal;
 }
 #ipad {
+    padding: 2px 5px;
     cursor: pointer;
     display: flex;
     align-items: center;
+}
+#ipad:hover {
+    background-color: #bf9430;
+    border-radius: 8px;
 }
 #ipad img {
     width: 42.277px;
@@ -150,15 +173,21 @@
     font-weight: 400;
     line-height: normal;
 }
+
 #mac {
+    padding: 0px 25px 0 4px;
     cursor: pointer;
     margin-right: 5%;
     display: flex;
     align-items: center;
 }
+#mac:hover {
+    background-color: #bf9430;
+    border-radius: 8px;
+}
 #mac img {
     width: 50.33px;
-    height: 50px;
+    height: 45px;
 }
 #mac p {
     margin-left: 8px;
