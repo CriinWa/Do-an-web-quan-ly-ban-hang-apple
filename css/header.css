@@ -19,6 +19,7 @@
     align-items: center;
 }
 #div_logo {
+    cursor: pointer;
     width: 20%;
 }
 #logo {
@@ -46,6 +47,7 @@
     padding: 0 0.5rem;
 }
 #div_search img {
+    cursor: pointer;
     position: absolute;
     top: 0.4375rem;
     right: 0.5rem;
@@ -53,6 +55,7 @@
     max-height: 1.3125rem;
 }
 #div_shopping {
+    cursor: pointer;
     width: 10%;
     align-items: center;
     display: flex;
@@ -71,6 +74,7 @@
     line-height: 125.023%; /* 1.09394rem */
 }
 #div_login {
+    cursor: pointer;
     width: 10%;
     align-items: center;
     display: flex;
@@ -110,6 +114,7 @@
     background: #FFB200;
 }
 #iphone {
+    cursor: pointer;
     display: flex;
     align-items: center;
 }
@@ -127,6 +132,7 @@
     line-height: normal;
 }
 #ipad {
+    cursor: pointer;
     display: flex;
     align-items: center;
 }
@@ -145,6 +151,7 @@
     line-height: normal;
 }
 #mac {
+    cursor: pointer;
     margin-right: 5%;
     display: flex;
     align-items: center;
@@ -164,6 +171,7 @@
     line-height: normal;
 }
 #security {
+    cursor: pointer;
     display: flex;
     align-items: center;
 }
@@ -183,6 +191,7 @@
     line-height: 125.023%; /* 17.503px */
 }
 #information {
+    cursor: pointer;
     display: flex;
     align-items: center;
 }
