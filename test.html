@@ -1,113 +1,62 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-  <style>
-    /* CSS */
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-    }
-    .product-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .product {
-      border: 1px solid #ddd;
-      padding: 10px;
-      width: 200px;
-    }
-  </style>
-</head>
-<body>
-  <h1>Quản lý Bán hàng</h1>
 
-  <div class="product-list">
-    <div class="product">
-      <h3>Sản phẩm 1</h3>
-      <p>Giá: $10</p>
-    </div>
-    <div class="product">
-      <h3>Sản phẩm 2</h3>
-      <p>Giá: $15</p>
-    </div>
-  </div>
-
-  <br>
-
-  <div>
-    <h2>Thêm sản phẩm mới</h2>
-    <form>
-      <label for="productName">Tên sản phẩm:</label><br>
-      <input type="text" id="productName" name="productName"><br><br>
-      <label for="productPrice">Giá:</label><br>
-      <input type="text" id="productPrice" name="productPrice"><br><br>
-      <input type="submit" value="Thêm">
-    </form>
-  </div>
-
-  <script>
-    // JavaScript
-    document.querySelector('form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      var productName = document.getElementById('productName').value;
-      var productPrice = document.getElementById('productPrice').value;
-
-      var productDiv = document.createElement('div');
-      productDiv.classList.add('product');
-
-      var productNameHeader = document.createElement('h3');
-      productNameHeader.textContent = productName;
-
-      var productPricePara = document.createElement('p');
-      productPricePara.textContent = 'Giá: $' + productPrice;
-
-      productDiv.appendChild(productNameHeader);
-      productDiv.appendChild(productPricePara);
-
-      document.querySelector('.product-list').appendChild(productDiv);
-    });
-  </script>
-</body>
-</html> -->
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-    /* CSS */
-    #image-container {
-      width: 300px;
-      height: 200px;
-      position: relative;
-      overflow: hidden;
-    }
-    .image {
-      position: absolute;
-      transition: opacity 1s ease-in-out;
-    }
-  </style>
+<style>
+  .container {
+  width: 1250px;
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+}
+
+#moving-image {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: transform 2s linear;
+}
+
+</style>
 </head>
 <body>
-  <div id="image-container">
-    <img class="image" src="https://via.placeholder.com/300x200?text=Image1" alt="Image 1" />
-    <img class="image" src="https://via.placeholder.com/300x200?text=Image2" alt="Image 2" />
+  <div class="container">
+    <img id="moving-image" src="./img/banner 1.jpg" alt="Hình ảnh di chuyển">
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>
 
-  <script>
-    // JavaScript
-    const images = document.querySelectorAll('.image');
-    let currentIndex = 0;
+<script>
+const images = ["./img/banner 1.jpg", "./img/banner 2.jpg", "./img/banner 3.jpg"]; // Thêm các đường dẫn hình ảnh khác vào đây
+let currentImageIndex = 0;
+const image = document.getElementById("moving-image");
+const container = document.querySelector(".container");
+const containerWidth = container.clientWidth;
+let isAnimating = false;
 
-    function showNextImage() {
-      images[currentIndex].style.opacity = 0;
-      currentIndex = (currentIndex + 1) % images.length;
-      images[currentIndex].style.opacity = 1;
-    }
+function changeImage() {
+  if (!isAnimating) {
+    isAnimating = true;
+    gsap.fromTo(image, 
+      { x: 0 }, 
+      { 
+        duration: 1, // Thời gian di chuyển hình ảnh
+        x: -containerWidth,
+        onComplete: function() {
+          image.src = images[currentImageIndex];
+          currentImageIndex = (currentImageIndex + 1) % images.length;
+          image.style.transform = 'translateX(0)';
+          isAnimating = false;
+        }
+      }
+    );
+  }
+}
 
-    setInterval(showNextImage, 2000); // Chuyển đổi hình ảnh sau mỗi 2 giây
-  </script>
+setInterval(changeImage, 10000); // Thay đổi hình ảnh mỗi 3 giây
+
+</script>
+
 </body>
 </html>

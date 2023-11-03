@@ -6,6 +6,7 @@
     <title>ThunderShop</title>
     <link rel="shortcut icon" href="./icon/icon-web.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/banner.css">
 </head>
 <body>
     <div id="header_line"></div>
@@ -58,5 +59,22 @@
             </div>
         </div>
     </div>
+    <div id="container">
+        <div id="div_banner">
+            <img src="./img/banner 1.jpg" alt="banner" class="active">
+            <img src="./img/banner 2.jpg" alt="banner">
+            <img src="./img/banner 3.jpg" alt="banner">
+        </div>
+        <div id="button_moving">
+            <img src="./icon/button_left.png" alt="button_left" id="button_moving_left" onclick="buttonLeftClick()">
+            <img src="./icon/button_right.png" alt="button_right" id="button_moving_right" onclick="buttonRightClick()">
+        </div>
+        <div id="button_moving_bottom">
+            <div class="button_moving_bottom_icon"></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
 </body>
+<script src="./js/banner-moving.js"></script>
 </html>
