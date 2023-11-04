@@ -7,6 +7,8 @@
     --border-color: #333333;
     --line-color: #0083D6;
     --menu-color: #FFB200;
+    --button-color: #D9D9D9;
+    --button-color-choose: #c0bfbf;
 }
 html {
     overflow-x: hidden;
@@ -20,8 +22,14 @@ html::-webkit-scrollbar-track {
     background: white;
 }
 html::-webkit-scrollbar-thumb {
-    background: black;
+    background: var(--button-color);
     border-radius: 5rem;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 #header_line {
     width: 100%;
