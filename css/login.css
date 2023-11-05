@@ -12,7 +12,6 @@
     --button-color-choose: #c0bfbf;
 }
 #form_login_total {
-    transition: width 0.5s, height 0.5s, background-color 0.5s;
     position: fixed;
     display: none;
     justify-content: center;
@@ -95,7 +94,7 @@ input[type = submit] {
     cursor: pointer ;
 }
 .option_submit input:hover {
-    background-color: var(--menu-color-choose);
+    background-color: #f3be43;
 }   
 .form_login_main_footer {
     display: flex ;
@@ -103,4 +102,19 @@ input[type = submit] {
     border-top: 1px solid var(--menu-color);
     align-items: center ;
     justify-content: center ;
+}
+#login_form {
+    position: relative;
+}
+#div_login_notify {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    bottom: 33px;
+    position: absolute;
+}
+#login_notify {
+    border-radius: 8px;
+    padding: 5px; 
+    background-color: transparent;
 }

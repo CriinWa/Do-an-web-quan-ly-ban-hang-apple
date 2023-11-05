@@ -118,7 +118,7 @@ body {
 }
 #div_login {
     cursor: pointer;
-    width: 10%;
+    width: 15%;
     align-items: center;
     display: flex;
 }
@@ -127,15 +127,39 @@ body {
     max-width: 3rem;
     max-height: 3rem;
 }
+#div_login_text {
+    width: 135px;
+    position: relative;
+}
 #div_login p {
+    padding: 2px;
     color: #000;
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 400;
     line-height: 125.023%; /* 1.09394rem */
 }
-#div_login p:hover {
+#div_login p:hover, #div_logout a:hover {
     color: var(--menu-color);
+}
+#div_logout {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 3px 3px 3px var(--boxshadow-color);
+    padding: 5px;
+    width: 127px;
+    position: absolute;
+    top:98%;
+    left:0;
+}
+#div_logout a {
+    margin: 2px 0;
+    color: #000;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125.023%; /* 1.09394rem */
 }
 #header_menu {
     display: flex;

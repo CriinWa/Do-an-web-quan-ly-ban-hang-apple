@@ -32,9 +32,16 @@
                 <img src="./img/icon/logo-shopping.png" alt="shopping">
                 <p>Giỏ hàng</p>
             </div>
-            <div id="div_login" onclick="open_login()">
+            <div id="div_login" onmouseover="" onmouseout="" onclick="open_login()">
                 <img src="./img/icon/icon-login.png" alt="icon-login">
-                <p>Đăng<br>nhập</p>
+                <div id="div_login_text">
+                    <p id="login_text">Đăng<br>nhập</p>
+                    <div id="div_logout">
+                        <a>Tài khoản</a>
+                        <a>Đơn hàng của tôi</a>
+                        <a onclick="logout()">Đăng xuất</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -51,13 +58,16 @@
                 </div>
                 <div class="form_login_main_body">
                     <div class="form_login_main_body_option">
-                        <form>
+                        <form onsubmit="check_login(event)" id="login_form">
                             <label for ="sdt" >Số điện thoại</label><br>
-                            <input type ="text" id ="sdt" name ="sdt"><br><br>
+                            <input type ="text" id ="phone" name ="phone"><br><br>
                             <label for ="password">Mật khẩu</label><br>
                             <input type ="password" id ="password" name ="password"><br><br>
                             <div class="option_submit">
                                 <input type ="submit" value ="Đăng nhập" class ="submit">
+                            </div>
+                            <div id="div_login_notify">
+                                <p id="login_notify"></p>
                             </div>
                         </form>
                     </div>
