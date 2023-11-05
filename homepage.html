@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ThunderShop</title>
-    <link rel="shortcut icon" href="./icon/icon-web.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/icon/icon-web.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="./css/banner.css">
     <link rel="stylesheet" href="./css/products.css">
     <link rel="stylesheet" href="./css/footer.css">
@@ -15,11 +20,11 @@
     <div id="header_items">
         <div id="total_items">
             <div id="div_logo">
-                <img src="./img/logo.png" alt="logo" id="logo" title="THUNDER TECHNOLOGY SHOP">
+                <a href="#"><img src="./img/logo.png" alt="logo" id="logo" title="THUNDER TECHNOLOGY SHOP"></a>
             </div>
             <div id="div_search">
                 <form action="#">
-                    <input type="text" id="search" placeholder="Hôm nay bạn cần tìm kiếm gì?">
+                    <input type="text" id="search" placeholder="Bạn cần tìm kiếm gì?">
                     <img src="./img/icon/search.png" alt="search" title="Tìm kiếm">
                 </form>
             </div>
@@ -27,9 +32,42 @@
                 <img src="./img/icon/logo-shopping.png" alt="shopping">
                 <p>Giỏ hàng</p>
             </div>
-            <div id="div_login">
+            <div id="div_login" onclick="open_login()">
                 <img src="./img/icon/icon-login.png" alt="icon-login">
                 <p>Đăng<br>nhập</p>
+            </div>
+        </div>
+    </div>
+    <div id="form_login_total">
+        <div class="form_login">
+            <div class="form_login_main">
+                <div class="form_login_main_head">
+                    <div class="form_login_main_title">
+                        <h2>Đăng nhập</h2>
+                    </div>
+                    <div class ="close_x" onclick="close_login()">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="form_login_main_body">
+                    <div class="form_login_main_body_option">
+                        <form>
+                            <label for ="sdt" >Số điện thoại</label><br>
+                            <input type ="text" id ="sdt" name ="sdt"><br><br>
+                            <label for ="password">Mật khẩu</label><br>
+                            <input type ="password" id ="password" name ="password"><br><br>
+                            <div class="option_submit">
+                                <input type ="submit" value ="Đăng nhập" class ="submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="form_login_main_footer">
+                        <div class="form_login_main_footer_text">Bạn chưa có tài khoản?</div>
+                        <div style="padding-left: 5px;">
+                            <a href="#">Đăng kí!</a>
+                        </div>   
+                </div>
             </div>
         </div>
     </div>
@@ -105,9 +143,15 @@
             <div>
                 <img src="./img/icon/button_left.png" alt="button_left">
             </div>
-            <div class="div_search_products_choose"> <p>1</p> </div>
-            <div> <p>2</p> </div>
-            <div> <p>...</p> </div>
+            <div class="div_search_products_choose"> 
+                <p>1</p> 
+            </div>
+            <div> 
+                <p>2</p> 
+            </div>
+            <div> 
+                <p>...</p> 
+            </div>
             <div>
                 <img src="./img/icon/button_right.png" alt="button_right">
             </div>
@@ -118,4 +162,5 @@
     </div>
 </body>
 <script src="./js/banner-moving.js"></script>
+<script src="./js/login.js"></script>
 </html>
